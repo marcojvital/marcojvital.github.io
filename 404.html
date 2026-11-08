@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Redirecting...</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  // Any address that starts with /portfolio in any capitalization goes to the real site.
+  (function () {
+    var p = location.pathname;
+    if (/^\/portfolio(\/|$)/i.test(p)) {
+      var rest = p.replace(/^\/portfolio/i, '');
+      location.replace('/portfolio' + (rest || '/') + location.search + location.hash);
+    } else {
+      location.replace('/portfolio/');
+    }
+  })();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=/portfolio/"></noscript>
+</head>
+<body>Redirecting to <a href="/portfolio/">marcojvital.github.io/portfolio/</a></body>
+</html>
